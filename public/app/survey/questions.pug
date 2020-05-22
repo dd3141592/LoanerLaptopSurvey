@@ -1,18 +1,5 @@
 doctype html
 hr
-div
-    p.bold(style="color: blue;")  Your Technology Loan Details:
-div( ng-repeat="loan in student.loanDetails"  )
-    table.td-row(style="padding: 10px; color:blue;")
-        tr
-            td(style="padding: 10px;")  <span style="color: black; font-weight:bold;">{{loan.techLoanType}}</span>
-            td(style="padding: 10px;")  <span style="color: black; font-weight:bold;">make:</span>&nbsp;   {{  loan.make}}
-            td(style="padding: 10px;")  <span style="color: black; font-weight:bold;">model:</span>&nbsp;   {{loan.model}}
-            td(style="padding: 10px;")  <span style="color: black; font-weight:bold;">serial number:</span>&nbsp;   {{loan.serialNumber}}
-            td(style="padding: 10px;")  <span style="color: black; font-weight:bold;">tracking number:</span>&nbsp;  {{loan.trackingNumber}}
-
-
-hr
 .row.padding-after
     .col-sm-6
         .form-group

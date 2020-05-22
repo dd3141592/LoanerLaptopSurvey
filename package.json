@@ -1,5 +1,5 @@
 {
-  "name": "loanerLaptopApp",
+  "name": "loanerLaptopSurverApp",
   "version": "1.0.0",
   "description": "LoanerLaptop Survey",
   "main": "web-server.js",
@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/dd3141592/LoanerLaptopSurvey/issues"
   },
-  "homepage": "https://github.com/dd3141592/LoanerLaptop#readme",
+  "homepage": "https://github.com/dd3141592/LoanerLaptopSurvey#readme",
   "dependencies": {
     "body-parser": "^1.16.0",
     "connect-multiparty": "^2.0.0",

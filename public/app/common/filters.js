@@ -1,6 +1,6 @@
 'use strict';
 
-loanerLaptopApp.filter('durations', function () {
+loanerLaptopSurverApp.filter('durations', function () {
     return function (duration) {
         switch (duration) {
             case 1:
@@ -15,7 +15,7 @@ loanerLaptopApp.filter('durations', function () {
     }
 });
 
-loanerLaptopApp.filter('days', function () {
+loanerLaptopSurverApp.filter('days', function () {
     return function (day) {
         switch (day) {
             case 'S':
@@ -37,13 +37,13 @@ loanerLaptopApp.filter('days', function () {
     }
 });
 
-loanerLaptopApp.filter('isArray', function () {
+loanerLaptopSurverApp.filter('isArray', function () {
     return function (input) {
         return angular.isArray(input);
     };
 });
 
-loanerLaptopApp.filter('listArray', function () {
+loanerLaptopSurverApp.filter('listArray', function () {
     return function (input) {
         if(!!input){
             return input.toString();
@@ -53,7 +53,7 @@ loanerLaptopApp.filter('listArray', function () {
     };
 });
 
-loanerLaptopApp.filter('toDate', function () {
+loanerLaptopSurverApp.filter('toDate', function () {
     return function (input) {
         if(!!input && input.length > 0){
 
@@ -63,7 +63,7 @@ loanerLaptopApp.filter('toDate', function () {
     };
 });
 
-loanerLaptopApp.filter('toPhone', function () {
+loanerLaptopSurverApp.filter('toPhone', function () {
     return function (input) {
         if(!!input && input.length > 0){
 
@@ -73,20 +73,20 @@ loanerLaptopApp.filter('toPhone', function () {
     };
 });
 
-loanerLaptopApp.filter('percentage', function ($filter) {
+loanerLaptopSurverApp.filter('percentage', function ($filter) {
     return function (input) {
         return $filter('number')((input * 100), 2) + '%';
     };
 });
 
-loanerLaptopApp.filter('check', function() {
+loanerLaptopSurverApp.filter('check', function() {
     return function (input) {
         if(!!input) return '*';
         return '-';
     };
 });
 
-loanerLaptopApp.filter('wordCount', function() {
+loanerLaptopSurverApp.filter('wordCount', function() {
     return function (input) {
         var regex = /\s+/gi;
         if(!!input){
@@ -98,7 +98,7 @@ loanerLaptopApp.filter('wordCount', function() {
     };
 });
 
-loanerLaptopApp.filter('toYearRange', function() {
+loanerLaptopSurverApp.filter('toYearRange', function() {
     return function (rangeCode) {
         switch (rangeCode) {
             case 'lessThan1':
@@ -115,7 +115,7 @@ loanerLaptopApp.filter('toYearRange', function() {
     }
 });
 
-loanerLaptopApp.filter('decodeEssay', function() {
+loanerLaptopSurverApp.filter('decodeEssay', function() {
     return function (essay) {
                 return decodeURIComponent(essay);
         }
