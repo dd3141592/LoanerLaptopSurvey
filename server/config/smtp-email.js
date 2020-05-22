@@ -4,29 +4,19 @@ var nodemailer = require("nodemailer"),
     env = process.env.NODE_ENV = process.env.NODE_ENV || 'development',
     config = require('./config.js')[env];
 
-var mailOptionsES = {
-    from: "cohelpdesk@ccc.edu",
-    subject: "Recibida Solicitud de Tecnología Prestada",
-    html: '<h4>Ha sido exitosa su petición de recibir tecnología prestada</h4>' +
-        '' + '<p>Favor de seguir recibiendo sus correos de City Colleges of Chicago para enterarse de los pormenores relacionados con las existencias y los plazos para el envío.</p>' +
-        '<br/>'
-};
+
 
 var mailOptions = {
     from: "cohelpdesk@ccc.edu",
-    subject: "Request for City Colleges of Chicago technology loan was Received",
-    html: '<h4>We have successfully received your technology request.</h4>' +
-    '' + '<p>Please continue to check your CCC email for notifications about availability and shipping.</p>' +
-    '<br/>'
+    subject: "City Colleges of Chicago technology survey was Received",
+    html: '<h4>We have successfully received your technology survey.</h4>' +
+     '<p>Thank you for abiding by your contract to ensure other students also have the opportunity to benefit from this opportunity, If you are returning your equipment, ' + 'please click <a href="https://www.signupgenius.com/index.cfm?go=c.SignUpSearch&eid=00C4CCD7F8CCFD66&cs=09C3BADB8FBE8B627B0764745BB29BC8&sortby=&view=i"> here</a> to sign up for a date/time/location to return your device(s).</p>' +
+    '<br/>If you have any questions, please contact the City Colleges IT Department at cohelpdesk@ccc.edu.</p>'
 };
 
-var mailOptionsPOL = {
-    from: "cohelpdesk@ccc.edu",
-    subject: "Request for City Colleges of Chicago technology loan was Received",
-    html: '<h4>We have successfully received your request for a technology loan.</h4>' +
-        '' + '<p>Please continue to check your CCC email for notifications about availability and shipping.</p>' +
-        '<br/>'
-};
+
+
+
 
 
 function transport(cfg) {
@@ -46,18 +36,15 @@ function checkTransporter(){
 }
 
 
-exports.sendEmail = function (toEmailAddress, lang) {
+exports.sendEmail = function (toEmailAddress) {
     if(!!toEmailAddress)
     {
         mailOptions.to = toEmailAddress;
-        mailOptionsES.to = toEmailAddress;
-        mailOptionsPOL.to = toEmailAddress;
 
     }
-    var mOptions = lang === 'ES' ? mailOptionsES :  (lang === 'POL' ?  mailOptionsPOL : mailOptions);
 
     checkTransporter();
-    transporter.sendMail(mOptions, function (error, info) {
+    transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
             console.log("error in email: " + error);
             return error;

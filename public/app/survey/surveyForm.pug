@@ -8,9 +8,9 @@ doctype html
             hr
     .row
         .col-sm-12.mb-5
-            p(ng-hide="Submitted == true") Dear student,
-            |  According to our records, you are not yet registered for summer or fall classes and have borrowed a laptop and/or Mi-Fi device from City Colleges for the spring semester.
-            |  Please take a moment to complete this form and let us know what your plans are.
+            p(ng-hide="Submitted") Dear student, <br/>According to our records, you are not yet registered for summer or fall classes and have borrowed a laptop and/or Mi-Fi device from City Colleges for the spring semester.
+            br
+            p(ng-hide="Submitted") Please take a moment to complete this form and let us know what your plans are.
 
             form(method='post', name='loanerLaptopSurveyForm')
                 div( ui-view)

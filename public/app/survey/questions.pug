@@ -3,7 +3,7 @@ hr
 .row.padding-after
     .col-sm-6
         .form-group
-            label.bootcamp-input-label.bold *Do you intend to enroll in summer or fall terms at City Colleges of Chicago?
+            label.bootcamp-input-label.bold *Do you intend to enroll in summer or fall classes at City Colleges of Chicago? Students who register for summer or fall classes may keep their borrowed device(s) until the end of those terms.
             br
             label.bootcamp-input-label.bold  Summer 2020
             .p-form-cg.pt-form-inline
@@ -39,40 +39,14 @@ hr
                         span.p-label No, I do not intend to register for Fall 2020
             div(ng-show= "SubmittedClicked")
                 .p-field-error(ng-show='!survey.enrollFall') Please enter your enrollment intentions for fall.
-
     .col-sm-6
-        p(style="color:blue;") Students who register for summer or fall classes may keep their borrowed device(s) until the end of those terms.
-
+        div(ng-show="survey.enrollFall == 'no'  && survey.enrollSummer == 'no'")
+            p(style="color:blue;") Please click <a target="_blank" href="https://www.signupgenius.com/index.cfm?go=c.SignUpSearch&eid=00C4CCD7F8CCFD66&cs=09C3BADB8FBE8B627B0764745BB29BC8&sortby=&view=i"> here</a> to sign up for a date/time/location to return your device(s).
 hr
 .row.padding-after
     .col-sm-6
         .form-group
-            label.bootcamp-input-label.bold  *Do you intend to return your laptop and/or Mi-Fi device?
-            .p-form-cg.pt-form-inline
-                .radio
-                    label
-                        input(type='radio', name='intendReturn', value='yes' ng-model="survey.intendReturn" required)
-                        span.p-check-icon
-                        |
-                        span.p-label Yes
-                .radio
-                    label
-                        input(type='radio', name='intendReturn', value='no' ng-model="survey.intendReturn" required)
-                        span.p-check-icon
-                        |
-                        span.p-label No
-            div(ng-show= "SubmittedClicked")
-                .p-field-error(ng-show='!survey.intendReturn') Please enter your intentions for returning your device(s).
-    .col-sm-6(ng-show="survey.intendReturn == 'no'")
-        p(style="color: blue;")  Please remember you signed an agreement that you would responsibly use your device and that includes returning your device once at the end of the term. Non-compliance could result in debt to City Colleges.
-        |  If you register for summer or fall classes by the registration deadline, you may keep your device(s).
-    .col-sm-6(ng-show="survey.intendReturn == 'yes'")
-        p(style="color: blue;")  After submitting this survey, you will be directed to the thank-you page.  Please click the link on that page to schedule return details.
-hr
-.row.padding-after
-    .col-sm-6
-        .form-group
-            label.bootcamp-input-label.bold  *You may purchase the laptop and/or Mi-Fi device at a discounted rate. Are you interested in purchasing the device(s)?
+            label.bootcamp-input-label.bold  Students taking classes in Summer and/or Fall may purchase the laptop and/or Mi-Fi device at a discounted rate. Are you interested in purchasing the device(s)?
             .p-form-cg.pt-form-inline
                 .radio
                     label
@@ -86,10 +60,21 @@ hr
                         span.p-check-icon
                         |
                         span.p-label No
+                .radio
+                    label
+                        input(type='radio', name='purchase', value='noS' ng-model="survey.purchase" required)
+                        span.p-check-icon
+                        |
+                        span.p-label I am no longer a CCC student
             div(ng-show= "SubmittedClicked")
-                .p-field-error(ng-show='!survey.purchase') Please enter your interest in purchasing device(s).
-    .col-sm-6(ng-show="survey.purchase == 'yes'")
-        p(style="color: blue;")  Please monitor your CCC email account for further information on how to purchase your device(s). If you have questions in the meantime, please contact the City Colleges IT Department at cohelpdesk@ccc.edu.
+                .p-field-error(ng-show='!survey.purchase') Please enter your a response.
+    .col-sm-6
+        div(ng-show="survey.purchase == 'no' || survey.purchase == 'noS'")
+            p(style="color: blue;") If you do not wish to purchase your device(s), you must either register for summer and/or fall classes, or click <a target="_blank" href="https://www.signupgenius.com/index.cfm?go=c.SignUpSearch&eid=00C4CCD7F8CCFD66&cs=09C3BADB8FBE8B627B0764745BB29BC8&sortby=&view=i"> here</a> to sign up for a date/time/location to return your device(s).
+
+        div(ng-show="survey.purchase == 'yes'")
+            p(style="color: blue;")  You will receive further information about how to purchase your device(s) to your City Colleges email.
+            |  If you have questions in the meantime, please contact the City Colleges IT Department at cohelpdesk@ccc.edu.
 
 
 

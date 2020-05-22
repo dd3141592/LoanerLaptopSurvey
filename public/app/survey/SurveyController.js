@@ -1,16 +1,17 @@
 angular.module('LoanerLaptopSurveyApp').controller('surveyController',
     function ($scope, $filter, $window, $state, $timeout, $http,$q,Student,  mvIdentity, Notifier ) {
 
-        $scope.Submitted = false;
         $scope.SubmittedClicked = false;
         $scope.survey = {};
 
+        $scope.Submitted = false;
 
         if (!mvIdentity.currentUser) {
             $state.go('login');
         } else {
             $scope.student = mvIdentity.currentUser;
             $scope.survey.studentid = $scope.student.EmployeeNumber;
+            $scope.survey.email = $scope.student.EmailAddress;
 
         }
 
@@ -22,8 +23,7 @@ angular.module('LoanerLaptopSurveyApp').controller('surveyController',
             if (
                 $scope.survey.purchase == undefined ||
                 $scope.survey.enrollSummer == undefined ||
-                $scope.survey.enrollFall == undefined ||
-                $scope.survey.intendReturn == undefined)
+                $scope.survey.enrollFall == undefined)
             {
                 return;
             }
@@ -33,15 +33,20 @@ angular.module('LoanerLaptopSurveyApp').controller('surveyController',
                 $scope.Submitted = true;
                 $scope.SubmittedClicked = false;
 
+                if(!result){
+
+                    Notifier.notify('You may have already submitted a survey.');
+                    return;
+                }
+
                 Notifier.notify('Your survey has been saved successfully');
                 $timeout(function () {
                         $state.go('survey.thanks');
                     }
                 );
-            },
-                function (err) {
+            }, function (err) {
 
-                    Notifier.notify('You may have already submitted a survey.');
+                Notifier.notify('You may have already submitted a survey.');
             });
         };
 
