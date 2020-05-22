@@ -1,4 +1,4 @@
-angular.module('loanerLaptopSurverApp').controller('surveyController',
+angular.module('LoanerLaptopSurveyApp').controller('surveyController',
     function ($scope, $filter, $window, $state, $timeout, $http,$q,Student,  mvIdentity, Notifier ) {
 
         $scope.Submitted = false;
@@ -15,9 +15,20 @@ angular.module('loanerLaptopSurverApp').controller('surveyController',
         }
 
         $scope.submitSurvey = function () {
+            $scope.SubmittedClicked = true;
             if (!$scope.loanerLaptopSurveyForm.$valid) {
                 return;
             }
+            if (
+                $scope.survey.purchase == undefined ||
+                $scope.survey.enrollSummer == undefined ||
+                $scope.survey.enrollFall == undefined ||
+                $scope.survey.intendReturn == undefined)
+            {
+                return;
+            }
+
+
             Student.saveSurvey({survey: $scope.survey}).$promise.then(function (result) {
                 $scope.Submitted = true;
                 $scope.SubmittedClicked = false;
@@ -29,6 +40,7 @@ angular.module('loanerLaptopSurverApp').controller('surveyController',
                 );
             },
                 function (err) {
+
                     Notifier.notify('You may have already submitted a survey.');
             });
         };

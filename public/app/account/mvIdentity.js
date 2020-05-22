@@ -1,4 +1,4 @@
-angular.module('loanerLaptopSurverApp').factory('mvIdentity', function() {
+angular.module('LoanerLaptopSurveyApp').factory('mvIdentity', function() {
   var currentUser;
 
   return {

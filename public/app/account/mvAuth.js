@@ -1,4 +1,4 @@
-angular.module('loanerLaptopSurverApp').factory('mvAuth', function($http, mvIdentity, $q) {
+angular.module('LoanerLaptopSurveyApp').factory('mvAuth', function($http, mvIdentity, $q) {
   return {
     authenticateUser: function(user) {
       var dfd = $q.defer();

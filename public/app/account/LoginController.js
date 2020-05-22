@@ -1,4 +1,4 @@
-angular.module('loanerLaptopSurverApp').controller('loginController',
+angular.module('LoanerLaptopSurveyApp').controller('loginController',
     function($scope, $http, $filter,$timeout,$interval, $q, $window,Student, Notifier, mvAuth,mvIdentity, $state) {
 
   $scope.currentTerm = $window.currentTerm;

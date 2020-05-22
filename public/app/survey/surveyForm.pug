@@ -3,13 +3,12 @@ doctype html
     .row
         .col-sm-4.mb-5
             h2 Your Login Profile
-            //p.font-weight-bold Name: {{student.DisplayName}}
             p.font-weight-bold Student ID: {{student.EmployeeNumber}}
             p.font-weight-bold Email Address: {{student.EmailAddress}}
             hr
     .row
         .col-sm-12.mb-5
-            p(ng-hide="Submitted") Dear student,
+            p(ng-hide="Submitted == true") Dear student,
             |  According to our records, you are not yet registered for summer or fall classes and have borrowed a laptop and/or Mi-Fi device from City Colleges for the spring semester.
             |  Please take a moment to complete this form and let us know what your plans are.
 

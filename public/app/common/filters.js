@@ -1,6 +1,6 @@
 'use strict';
 
-loanerLaptopSurverApp.filter('durations', function () {
+LoanerLaptopSurveyApp.filter('durations', function () {
     return function (duration) {
         switch (duration) {
             case 1:
@@ -15,7 +15,7 @@ loanerLaptopSurverApp.filter('durations', function () {
     }
 });
 
-loanerLaptopSurverApp.filter('days', function () {
+LoanerLaptopSurveyApp.filter('days', function () {
     return function (day) {
         switch (day) {
             case 'S':
@@ -37,13 +37,13 @@ loanerLaptopSurverApp.filter('days', function () {
     }
 });
 
-loanerLaptopSurverApp.filter('isArray', function () {
+LoanerLaptopSurveyApp.filter('isArray', function () {
     return function (input) {
         return angular.isArray(input);
     };
 });
 
-loanerLaptopSurverApp.filter('listArray', function () {
+LoanerLaptopSurveyApp.filter('listArray', function () {
     return function (input) {
         if(!!input){
             return input.toString();
@@ -53,7 +53,7 @@ loanerLaptopSurverApp.filter('listArray', function () {
     };
 });
 
-loanerLaptopSurverApp.filter('toDate', function () {
+LoanerLaptopSurveyApp.filter('toDate', function () {
     return function (input) {
         if(!!input && input.length > 0){
 
@@ -63,7 +63,7 @@ loanerLaptopSurverApp.filter('toDate', function () {
     };
 });
 
-loanerLaptopSurverApp.filter('toPhone', function () {
+LoanerLaptopSurveyApp.filter('toPhone', function () {
     return function (input) {
         if(!!input && input.length > 0){
 
@@ -73,20 +73,20 @@ loanerLaptopSurverApp.filter('toPhone', function () {
     };
 });
 
-loanerLaptopSurverApp.filter('percentage', function ($filter) {
+LoanerLaptopSurveyApp.filter('percentage', function ($filter) {
     return function (input) {
         return $filter('number')((input * 100), 2) + '%';
     };
 });
 
-loanerLaptopSurverApp.filter('check', function() {
+LoanerLaptopSurveyApp.filter('check', function() {
     return function (input) {
         if(!!input) return '*';
         return '-';
     };
 });
 
-loanerLaptopSurverApp.filter('wordCount', function() {
+LoanerLaptopSurveyApp.filter('wordCount', function() {
     return function (input) {
         var regex = /\s+/gi;
         if(!!input){
@@ -98,7 +98,7 @@ loanerLaptopSurverApp.filter('wordCount', function() {
     };
 });
 
-loanerLaptopSurverApp.filter('toYearRange', function() {
+LoanerLaptopSurveyApp.filter('toYearRange', function() {
     return function (rangeCode) {
         switch (rangeCode) {
             case 'lessThan1':
@@ -115,7 +115,7 @@ loanerLaptopSurverApp.filter('toYearRange', function() {
     }
 });
 
-loanerLaptopSurverApp.filter('decodeEssay', function() {
+LoanerLaptopSurveyApp.filter('decodeEssay', function() {
     return function (essay) {
                 return decodeURIComponent(essay);
         }

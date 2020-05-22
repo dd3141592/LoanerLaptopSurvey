@@ -1,5 +1,5 @@
 'use strict';
-var loanerLaptopSurverApp = angular.module('loanerLaptopSurverApp', ['ngResource',  'ui.router', 'ngFileUpload','as.sortable', 'ui.mask', 'ui.bootstrap', 'ngAnimate', 'angularSpinner' ])
+var LoanerLaptopSurveyApp = angular.module('LoanerLaptopSurveyApp', ['ngResource',  'ui.router', 'ngFileUpload','as.sortable', 'ui.mask', 'ui.bootstrap', 'ngAnimate', 'angularSpinner' ])
     .config(function ($stateProvider,  $urlRouterProvider, $locationProvider) {
 
         $stateProvider.state('admin',
@@ -27,6 +27,14 @@ var loanerLaptopSurverApp = angular.module('loanerLaptopSurverApp', ['ngResource
                 url: '/thanks',
                 templateUrl: "/LoanerLaptopSurvey/partials/survey/thanks"
             });
+        $stateProvider.state('login',
+            {
+                url: '/LoanerLaptopSurvey/login',
+                templateUrl: "/LoanerLaptopSurvey/partials/account/login",
+                controller: 'loginController'
+
+            });
+
 
 
         $urlRouterProvider.when('/loanerlaptopsurvey', function ($state) {
@@ -78,7 +86,7 @@ var loanerLaptopSurverApp = angular.module('loanerLaptopSurverApp', ['ngResource
 
 
 
-angular.module('loanerLaptopSurverApp').run(function ($rootScope, $state) {
+angular.module('LoanerLaptopSurveyApp').run(function ($rootScope, $state) {
     $rootScope.$on('$stateChangeError', function (evt, current, previous, rejection) {
         console.log('state change error + rejection: ' + rejection);
         $state.go('login');

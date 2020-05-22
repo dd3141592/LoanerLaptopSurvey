@@ -1,9 +1,9 @@
 /**
  * Created by nnaeednamrod on 2/18/17.
  */
-angular.module('loanerLaptopSurverApp').value('Toastr',toastr);
+angular.module('LoanerLaptopSurveyApp').value('Toastr',toastr);
 
-angular.module('loanerLaptopSurverApp').factory('Notifier', function(Toastr)
+angular.module('LoanerLaptopSurveyApp').factory('Notifier', function(Toastr)
 {
 	return {
 		notify: function(msg) {

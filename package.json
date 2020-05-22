@@ -1,5 +1,5 @@
 {
-  "name": "loanerLaptopSurverApp",
+  "name": "LoanerLaptopSurveyApp",
   "version": "1.0.0",
   "description": "LoanerLaptop Survey",
   "main": "web-server.js",

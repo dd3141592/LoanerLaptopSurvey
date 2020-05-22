@@ -61,6 +61,3 @@ function  callCS9(studentId) {
     return deferred.promise;
 }
 
-function checkStudentStatus(id){
-
-}

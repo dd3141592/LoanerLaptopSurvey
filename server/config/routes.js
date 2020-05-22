@@ -6,13 +6,6 @@ var
 
 
 module.exports = function (config, app) {
-    app.post( config.virtualDirPath +'/api/application/save', sql.saveApplication);
-    app.get( config.virtualDirPath +'/api/getStudentApplication/:studentId', sql.getApplication);
-    app.get( config.virtualDirPath +'/api/getLaptopApplications', sql.getLaptopApplications);
-    app.get( config.virtualDirPath +'/api/getHotSpotApplications', sql.getHotSpotApplications);
-    app.get( config.virtualDirPath +'/api/getTechLoanDetails/:studentId', sql.getTechLoanDetails);
-
-    app.get( config.virtualDirPath +'/api/getStudentTechLoanCreds/:studentId', crm.getCS9Credentials);
     app.post( config.virtualDirPath +'/api/saveSurvey', sql.saveSurvey);
 
     app.get(config.virtualDirPath + '/partials/*', function (req, res) {
