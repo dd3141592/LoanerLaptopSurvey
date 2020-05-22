@@ -1,0 +1,23 @@
+/*!
+ * Start Bootstrap - Busines Frontpage (https://startbootstrap.com/template-overviews/business-frontpage)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-business-frontpage/blob/master/LICENSE)
+ */
+body {
+  padding-top: 56px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.img-scholarships {
+  width:100%;
+  margin:0;
+  background:transparent url('/scholarshipApp/img/backgroundheader.jpg') no-repeat center center /cover;
+  background-size: cover;
+}
+
+.img-whitelogo { background-image: url(/scholarshipApp/img/district-logo-white.png)   ; background-repeat:repeat-x;
+}

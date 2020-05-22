@@ -1,0 +1,26 @@
+doctype
+html
+    head
+        base(href="/")
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        meta(name='description', content='The City Colleges of Chicago Loaner Laptop App.')
+        meta(name='author', content='Dennis Macklin, City Colleges of Chicago Website Applications Developer')
+        title City Colleges of Chicago: Loaner Laptop Application
+        // Bootstrap core CSS
+        //link(href='/LoanerLaptop/css/bootstrap.min.css', rel='stylesheet')
+        link(href='/LoanerLaptop//lib/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+        link( rel="stylesheet", href="/LoanerLaptop/lib/toastr/toastr.min.css" )
+        // Custom styles for this template
+        link(href='/LoanerLaptop/css/business-frontpage.css', rel='stylesheet')
+        link(href='/LoanerLaptop/FormsFramework/css/forms-plus.css', rel='stylesheet')
+        link(href='/LoanerLaptop/css/app.css', rel='stylesheet')
+        link(rel='icon' href='favicon.ico' type='image/png' sizes='79x79')
+        link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous')
+        script(src="/LoanerLaptop/lib/jquery/dist/jquery.min.js")
+        script(src="/LoanerLaptop/lib/bootstrap/dist/js/bootstrap.min.js")
+
+    body(ng-app="loanerLaptopApp" ng-cloak )
+    include currentYearInfo
+        block main-content
+    include scripts

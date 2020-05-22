@@ -1,0 +1,142 @@
+@charset "utf-8";
+/* CSS Document */
+body {font-family: 'Oswald', sans-serif;}
+
+.padding-after{
+	padding:0 0 10px 0;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+ul{
+
+	-webkit-padding-start: 0px;
+}
+
+li {
+	display: list-item;
+	text-align: unset;
+	margin-left: 20px;
+}
+
+.linkBlue{
+	color:#007bff
+}
+
+.text-center {
+	background-color: #DEEAF6;
+}
+
+.lightblue {
+	background-color: #DEEAF6;
+}
+
+.btn-scholarshipAppBC {
+	border-radius:0px;
+	background:#98002e;
+	color:#fff;
+	text-transform:uppercase;
+	border:none;
+	padding:8px 16px;
+    letter-spacing: 1px;
+}
+.bootcamp-btn-wrap {
+	width:100%; 
+	display:block;
+}
+.bootcamp-input {
+	line-height: 1.5em;
+	font-size: 1em;
+	padding: 5px 10px;
+	color: #333;
+	background: transparent;
+	border-radius:0;
+}
+.img-techbootcamp {
+	width:100%;
+	margin:0;
+}
+.bootcamp-input {
+	border: 1px solid #ccc;
+	-webkit-transition: 0.5s; /* Safari */
+    transition: 0.5s;
+}
+.bootcamp-input:focus,
+.bootcamp-input:active {
+	outline: none;
+	border: 1px solid #333;
+		-webkit-transition: 0.5s; /* Safari */
+    transition: 0.5s;
+
+}
+.bootcamp-input:focus {outline: none;}
+
+.bootcamp-input-label, .bootcamp-checkbox  {
+	color:#333;
+}
+.bootcamp-radio-wrap {
+	width:100%; 
+	display:block; 
+	margin-bottom:16px; 
+	margin-top:16px;
+	
+}
+
+.bootcamp-form-descrip {
+	color:#a67c52; 
+	font-size:18px; 
+	margin-top:16px;
+}
+.techbootcamp-descrip {
+	color:#333; 
+	font-family:arial; 
+	font-size:16px;
+}
+
+.techbootcamp-title {
+color:#98002e; font-weight:300;
+}
+
+.checkbox label, .radio label {
+    min-height: 20px;
+    padding-left: 20px;
+    margin-bottom: 0;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.ccc-tooltip {
+	color:#333;
+	background:#fff;
+	margin-top:24px;
+	padding:0;
+	
+}
+.ccc-tooltip:hover {
+	opacity:0.8;
+	
+}
+
+.outer-wrap {
+	width:100%;
+	/*background:url(../images/pagebg.jpg)*/
+	background: linear-gradient(#ccc, #fff);
+}
+
+/*@media (max-width: 375px) {*/
+
+/*}*/
+
+/*@media (max-width: 429px) {*/
+
+/*}*/
+
+/*@media (min-width: 768px) {*/
+
+/*}*/
+
+/*@media (min-width: 992px) {*/
+
+/*}*/

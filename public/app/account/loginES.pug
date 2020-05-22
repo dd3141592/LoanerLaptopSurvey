@@ -1,0 +1,29 @@
+.container
+    .row
+        .col-md-8.mb-5
+            h5  ¡BIENVENIDOS A LA PAGINA DE ACCESO DE CHICAGO CITY COLLEGES PARA LA SOLICITUD DE PRESTAMO DE TECNOLOGIA!
+            p   Los que sean alumnos que buscan satisfacer los requisitos para graduarse, o bien los que sean integrantes del programa de educación para los adultos, podrán solicitar el préstamo de una computadora portátil y/o un WiFi “hotspot” <a href='' title="es aparato móvil que permite que su teléfono o portátil se conecte a la internet. Chicago City Colleges se encargará de pagar los cargos para el uso de dados."><span style="font-weight: bold:">?</span></a>  Tomando en consideración la necesidad de los demás, pedimos que no solicite hotspot caso tenga otra manera de conectarse a la internet a partir de su domicilio.
+            br
+            form.css-form.modern-p-form.p-form-modern-chocolate(method='post', name='loginAppForm')
+                .form-group.mb-1
+                    label.font-weight-bold(for='username') Username (Example - jsmith47):
+                .form-group
+                    input#username.form-control(placeholder='Ponga CCC username...', type='text', name='username', ng-model='user.username', required)
+                    div(ng-show='loginAppForm.$submitted || loginAppForm.username.$touched || loginClicked')
+                        .p-field-error.p-error-text(ng-show='loginAppForm.username.$error.required') Favor de proporcionar su username.
+                .form-group.mb-1
+                    label.font-weight-bold(for='password') Contraseña:
+                .form-group
+                    input#password.form-control(placeholder='Ponga CCC contraseña...', type='password', name='password',ng-blur="setFocus()" ng-model='user.password', required)
+                    div(ng-show='loginAppForm.$submitted  || loginClicked')
+                        .p-field-error.p-error-text(ng-show='loginAppForm.password.$error.required') Favor de proporciona su contraseña.
+            p
+                input.btn.btn-primary.btn-lg(type='submit', ng-click='submitLogin("ES")' value='Login' id="login")
+            p
+                strong ¿Ayuda con los problemas de inicio de sesión? Si tiene problemas de inicio de sesión y no puede acceder a la aplicación de prueba de CCC
+                br
+                a(href="https://contrasena.ccc.edu/") Restablecimiento de Contraseña
+                br
+                a(href="https://apps.ccc.edu/accountmanagement/recuperarnombredeusuario.aspx")  Buscar Usuario
+                br
+                a(href="http://ccc.custhelp.com/app/answers/list/p/178/c/470")  Busca ayuda en esta página

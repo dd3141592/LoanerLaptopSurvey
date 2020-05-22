@@ -1,0 +1,40 @@
+.container
+    .row
+        //.col-md-8.mb-5
+        //    a
+        .col-md-8.mb-5
+            h5  WELCOME TO THE CCC TECHNOLOGY LOAN APPLICATION LOGIN PAGE!
+            .col-md-4.offset-8
+                a(href=""  ui-sref="loginES")
+                    span.bold Español
+                label &nbsp; &nbsp; &nbsp;
+                a(href=""  ui-sref="loginPOL")
+                    span.bold Po Polsku
+            //p   City Colleges of Chicago students may borrow a laptop free of charge until the end of the spring 2020 semester.
+            p ​CCC Credit and Adult Education students may request the loan of a laptop and/or a personal mobile WiFi “hot spot” <a href=""  title="a hot spot is a mobile internet-enabled device that provides internet access via Wi-Fi to your phone or laptop.
+            |  CCC will pay for data usage."><span style="font-weight: bold:">?</span></a> for the {{currentTerm}} or {{nextTerm}} term.
+            | Out of consideration for others, please do not request a hotspot if you have another means of accessing the internet from home.​
+            br
+            form.css-form.modern-p-form.p-form-modern-chocolate(method='post', name='loginAppForm')
+                .form-group.mb-1
+                    label.font-weight-bold(for='username') Username (Example - jsmith47):
+                .form-group
+                    input#username.form-control(placeholder='Enter CCC username...', type='text', name='username', ng-model='user.username', required)
+                    div(ng-show='loginAppForm.$submitted || loginAppForm.username.$touched || loginClicked')
+                        .p-field-error.p-error-text(ng-show='loginAppForm.username.$error.required') Please enter your user name.
+                .form-group.mb-1
+                    label.font-weight-bold(for='password') Password:
+                .form-group
+                    input#password.form-control(placeholder='Enter CCC password...', type='password', name='password',ng-blur="setFocus()" ng-model='user.password', required)
+                    div(ng-show='loginAppForm.$submitted  || loginClicked')
+                        .p-field-error.p-error-text(ng-show='loginAppForm.password.$error.required') Please enter your password.
+            p
+                input.btn.btn-primary.btn-lg(type='submit', ng-click='submitLogin("ENG")' value='Login' id="login")
+            p
+                strong Help with Log in Issues?
+                |  If you are having login issues and are unable to access the CCC Testing Application, reset your password at&nbsp;
+                a(href='http://passwordreset.ccc.edu', title='Link to Passwordreset.ccc.edu') passwordreset.ccc.edu
+                |  or visit&nbsp;
+                a(href='http://www.ccc.edu/help', title='Link to Passwordreset.ccc.edu') www.ccc.edu/help
+                |  to search our knowledge base or open a support ticket.
+

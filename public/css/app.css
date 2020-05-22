@@ -1,0 +1,134 @@
+body{
+  margin-left: 15px;
+  background-color: transparent;
+}
+
+form.navbar-form input.form-control{
+  margin-left: 10px;
+}
+form.navbar-form button{
+  margin-left: 10px;
+}
+
+.row.striped:nth-child(even){
+  background-color: #dcdcdc;
+}
+.row.striped:nth-child(odd){
+  background-color: #aaaaaa;
+}
+
+ span.fieldcombo {
+  font-weight:bold;
+}
+
+.timebox {
+
+    border-style: solid;
+    background-color: #52E396;
+    border-width: 1px;
+}
+
+/*.detail.row.col-sm-3 span::nth-child(even){*/
+  /*background-color: #aaaaaa;*/
+/*}*/
+
+.css-form .form-control.ng-invalid.ng-touched {
+  border-color: #fa787E;
+  font-weight: bold;
+  border-width: thick;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+
+
+.css-form .form-control.ng-invalid.ng-touched.date-picker{
+  background-color: transparent;
+  border-color: #fa787E;
+  border-width: thick;
+  color: #fff;
+}
+
+.p-field-error{
+  color: #fa787E;
+}
+
+.allCaps{
+  text-transform: uppercase;
+  font-weight:bold;
+}
+.underline{
+    text-decoration: underline;
+}
+.bold{
+    font-weight: bold;
+}
+.italics{
+    font-style: italic;
+}
+
+.vertical-text {
+  transform: rotate(90deg);
+  transform-origin: left top 0;
+}
+.no-pad{
+  padding: 0;
+}
+
+.navbar-items{
+ margin:auto;
+}
+
+/*BROWN Primary #332012 -- Secondary #754200
+YELLOW Primary #f49b19-- Secondary #f9b630
+BLUE Primary #1c75bc -- Secondary #27aae1
+ORANGE Primary #dc5f13 -- Secondary #f7931e
+MAROON Primary #8b2331- Secondary #bf1e55
+GREEN Primary #648b1a - Secondary #a4d100
+PURPLE Primary  #62259d - Secondary #93278f
+*/
+
+.brown{
+    color: #332012;
+}
+
+/*.border {   border-width: 15px;   border-color: #754200;*/
+  /*background-color: #754200;*/
+  /*border-style: solid;}*/
+
+.toast-top-right {
+	top: 570px;
+}
+.toast-success {
+	background-color: #13987e;
+}
+
+select, textarea {
+  color: #52575c;
+}
+.session {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.blue {
+  color: #0b93d5;
+}
+
+#sortable-container {
+  display: inline-block;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+
+
+
+
+

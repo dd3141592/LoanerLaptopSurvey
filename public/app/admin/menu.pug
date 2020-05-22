@@ -1,0 +1,128 @@
+doctype html
+.container.top-padding-med
+    .col-sm-10.col-sm-offset-1
+        .row
+            .col-sm-12
+                h5.center  Please note if you plan on <span class="bold">Exporting to Excel</span> you will need to use either Chrome or Firefox.
+        .row
+            .col-md-6
+                a(href="" ng-click="downloadRequests('hotspot')") WiFi hot spot requests​
+            .col-md-6
+                a(href="" ng-click="downloadRequests('laptop')") Laptop requests
+        .row
+            .col-md-6
+                a(ui-sref="application.screen")  Go Back to Application for testing
+        br
+
+    #LaptopList(style="display:none;")
+            table
+                thead
+                    tr
+                        th
+                            span  Student ID
+                        th
+                            span  Username
+                        th
+                            span  Name
+                        th
+                            span  Email
+                        th
+                            span  Phone
+                        th
+                            span  Address
+                        th
+                            span  Address 2
+                        th
+                            span  City
+                        th
+                            span  State
+                        th
+                            span Postal Code
+                        th
+                            span Submission Date
+
+                tbody
+                    tr(ng-repeat="participant in laptopApplications" )
+                        td
+                            span   {{participant.studentid}}
+                        td
+                            span  {{participant.username}}
+                        td
+                            span   {{participant.studname}}
+                        td
+                            span  {{participant.studentemail}}
+                        td
+                            span  {{participant.mobilephone}}
+                        td
+                            span  {{participant.address}}
+                        td
+                            span  {{participant.address2}}
+                        td
+                            span  {{participant.city}}
+                        td
+                            span   {{participant.state}}
+                        td
+                            span  {{participant.postal}}
+                        td
+                            span  {{participant.submissiondate | date: 'medium'}}
+
+    #HotSpotList(style="display:none;")
+            table
+                thead
+                    tr
+                        th
+                            span  Student ID
+                        th
+                            span  Username
+                        th
+                            span  Name
+                        th
+                            span  Email
+                        th
+                            span  Phone
+                        th
+                            span  Address
+                        th
+                            span  Address 2
+                        th
+                            span  City
+                        th
+                            span  State
+                        th
+                            span Postal Code
+                        th
+                            span Submission Date
+                tbody
+                    tr(ng-repeat="participant1 in hotspotApplications" )
+                        td
+                            span   {{participant1.studentid}}
+                        td
+                            span  {{participant1.username}}
+                        td
+                            span   {{participant1.studname}}
+                        td
+                            span  {{participant1.studentemail}}
+                        td
+                            span  {{participant1.mobilephone}}
+                        td
+                            span  {{participant1.address}}
+                        td
+                            span  {{participant1.address2}}
+                        td
+                            span  {{participant1.city}}
+                        td
+                            span   {{participant1.state}}
+                        td
+                            span  {{participant1.postal}}
+                        td
+                            span  {{participant1.submissiondate | date: 'medium'}}
+                        
+
+
+
+
+
+
+
+
+

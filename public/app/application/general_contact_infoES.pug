@@ -1,0 +1,180 @@
+doctype html
+.row.padding-after
+    .col-md-12
+        p   Pido prestado un
+        .checkbox
+            label
+                input(ng-disabled = "laptopDisabled"  type="checkbox" ng-checked='student.laptop === 1 || student.laptop === true' ng-model='student.laptop'   )
+                span.p-check-icon
+                    span.p-check-block
+                |
+                span.p-label.bold
+                    | &nbsp;&nbsp;Portátil:&nbsp;
+                span.p-lable( ng-show="laptopDisabled")
+                    |  Pedió prestado un portátil el día: <span style="font-weight:bold;">{{student.laptopsubdate | date: 'medium'}}</span>
+        .checkbox
+            label
+                input(type="checkbox" ng-disabled="hotspotDisabled" ng-change="itemClicked('hotspot');" ng-checked='student.hotspot===1 || student.hotspot===true' ng-model='student.hotspot' )
+                span.p-check-icon
+                    span.p-check-block
+                |
+                span.p-label.bold
+                    | &nbsp;&nbsp Hotspot de internet personal: &nbsp;
+                span.p-lable( ng-show="hotspotDisabled")
+                    |  &nbsp;Pedió prestado hotspot de internet personal el día:  el día: <span style="font-weight:bold;">{{student.hotspotsubdate | date: 'medium'}}</span>
+        .p-field-error(ng-show="(loanerLaptopAppForm.$submitted || SubmittedClicked) && ((student.laptop != true && student.hotspot!= true)  || (student.laptop != 1 && student.hotspot != 1))  ") Please select a request for either a laptop, hotspot or both.
+.p-subtitle
+    span.p-title-line  Información de contacto
+    br
+    span(ng-show="student.disableFieldsFlag")  Caso esté equivocada esta información, favor de comunicarse con  <a href="mailto:cohelpdesk@ccc.edu">cohelpdesk</a>
+.row.padding-after
+    .col-sm-6
+        .form-group
+            label.bootcamp-input-label(for='prefPhone') Teléfono mas usado
+            .input-group.p-has-icon
+                input#prefPhone.form-control.bootcamp-input(type='text', name='prefPhone',
+                ui-mask='999.999.9999' ui-mask-placeholder ui-options="{clearOnBlur:false}"
+                placeholder='teléfono ' ng-model="student.mobilephone"
+                    ng-disabled="student.disableFieldsFlag"  required)
+                span.input-group-state
+                    span.p-position
+                        span.p-text
+                            span.p-required-text
+                                i.fa.fa-star
+                span.p-field-cb
+            .p-field-error( ng-if="loanerLaptopAppForm.prefPhone.$touched && loanerLaptopAppForm.prefPhone.$error.mask" ) Proporcione número con diez dígitos.
+            div(ng-show='loanerLaptopAppForm.$submitted || loanerLaptopAppForm.prefPhone.$touched || SubmittedClicked')
+                .p-field-error(ng-show='loanerLaptopAppForm.prefPhone.$error.required') Se requiere número de teléfono.
+
+.row.padding-after
+    .col-sm-6
+        .form-group
+            label.bootcamp-input-label(for='address1') Dirección Domiciliar  <span style="font-weight:bold;">(Atención: no es posible el envío a caja postal)</span>
+            .input-group.p-has-icon
+                input#address1.form-control.bootcamp-input(type='text'
+                    name='address1' placeholder='dirección'
+                    ng-disabled="student.disableFieldsFlag"  ng-model="student.address"  required)
+                span.input-group-state
+                    span.p-position
+                        span.p-text
+                            span.p-required-text
+                                i.fa.fa-star
+                span.p-field-cb
+            div(ng-show='loanerLaptopAppForm.$submitted || loanerLaptopAppForm.address1.$touched || SubmittedClicked')
+                .p-field-error(ng-show='loanerLaptopAppForm.address1.$error.required') Se requiere dirección domiciliar
+
+
+    .col-sm-6
+        .form-group
+            label.bootcamp-input-label(for='address2') Apartment/Unit/Suite Number
+            .input-group.p-has-icon
+                input#address2.form-control.bootcamp-input(type='text'
+                    name='address2' placeholder='Apt # or unit'
+                    ng-disabled="student.disableFieldsFlag"  ng-model="student.address2" )
+
+.row.padding-after
+
+    .col-sm-6
+        .form-group
+            label.bootcamp-input-label(for='city1') Ciudad
+            .input-group.p-has-icon
+                input#city1.form-control.bootcamp-input(type='text' name='city1' placeholder='ciudad'
+                    ng-disabled="student.disableFieldsFlag"  ng-model="student.city" required)
+                span.input-group-state
+                    span.p-position
+                        span.p-text
+                            span.p-required-text
+                                i.fa.fa-star
+                span.p-field-cb
+            div(ng-show='loanerLaptopAppForm.$submitted || loanerLaptopAppForm.city1.$touched || SubmittedClicked')
+                .p-field-error(ng-show='loanerLaptopAppForm.city1.$error.required') Se requiere ciudad.
+    .col-sm-6
+        .form-group
+            label.bootcamp-input-label(for='state1') Estado
+            |
+            label.input-group.p-has-icon.p-custom-arrow
+                select.form-control.bootcamp-input(name='state1' ng-options="element for element in states"
+                    ng-disabled="student.disableFieldsFlag"  id="state1"  ng-model="student.state" required)
+                span.input-group-state
+                    span.p-position
+                        span.p-text
+                            span.p-required-text
+                                i.fa.fa-star
+                span.p-field-cb
+            div(ng-show='loanerLaptopAppForm.$submitted || loanerLaptopAppForm.state1.$touched || SubmittedClicked')
+                .p-field-error(ng-show='loanerLaptopAppForm.state1.$error.required') Seleccionar un estado.
+        label(style="font-weight:bold;") Solo podemos aceptar solicitudes de IL, IN e WI. Si se refugia en otro estado, por favor póngase en contacto con el cohelpdesk-ccc.edu o deje un mensaje al 312-553-2600 para obtener ayuda.
+.row.padding-after
+    .col-sm-6
+        .form-group
+            label.bootcamp-input-label(for='postal-code1') Código postal
+            .input-group.p-has-icon
+                input#postal-code1.form-control.bootcamp-input(type='text' ui-mask="99999" ui-mask-placeholder
+                ui-options="{clearOnBlur:false}"  name='postalCode1' placeholder='código postal'
+                    ng-disabled="student.disableFieldsFlag"  ng-model="student.postal" required)
+                span.input-group-state
+                    span.p-position
+                        span.p-text
+                            span.p-required-text
+                                i.fa.fa-star
+                span.p-field-cb
+            .p-field-error( ng-if="loanerLaptopAppForm.postalCode1.$touched && loanerLaptopAppForm.postalCode1.$error.mask" ) Proporcione código postal vigente.
+            div(ng-show='loanerLaptopAppForm.$submitted || loanerLaptopAppForm.postalCode1.$touched || SubmittedClicked')
+                .p-field-error(ng-show='loanerLaptopAppForm.postalCode1.$error.required') Se requiere código postal.
+
+hr
+div(ng-show="Submitted")
+    p  <a class="pointer" ng-click="goToAgreement('agreementES')"><span style="font-weight: bold;">Reconocimiento aqui</span>.</a>
+div(ng-hide="Submitted")
+    <strong>Reconocimiento legal</strong>
+    p Al hacer click, afirmo que leí las condiciones legales precedentes, referentes al programa de préstamos de computadoras portátiles, y que acepto dichas condiciones <a class="pointer" ng-click="goToAgreement('agreementES')"><span style="font-weight: bold;">aqui</span>.</a>
+
+    .custom-control.custom-checkbox
+        input#privacyconsent.custom-control-input(type='checkbox', name='privacyconsent', ng-model='student.privacyconsent', required)
+        label.custom-control-label(for='privacyconsent') Acepto las condiciones legales estipulada.
+        span.glyphicon.glyphicon-check
+        i.fa.fa-check-square-o
+        span.input-group-state
+            span.p-position
+                span.p-text
+                    span.p-required-text
+                        i.fa.fa-star
+        span.p-field-cb
+        div(ng-show='loanerLaptopAppForm.$submitted || SubmittedClicked')
+            .p-field-error(ng-show='loanerLaptopAppForm.privacyconsent.$error.required') Favor de aceptar las condiciones legales estipuladas.
+
+
+
+#addressModal.modal.fade(tabindex="-1", aria-labelledby="exampleModalLabel", aria-hidden="true")
+    .modal-dialog.modal-dialog-centered.modal-sm
+        .modal-content
+            .modal-header
+                h5#exampleModalLabel.modal-title Address Validation
+            .modal-body(ng-model="student")
+                .row
+                    .col-sm-12.sched-radioseason
+                        .row
+                            .col-sm-2
+                                label( for="opt1")
+                                    input#opt1(type="radio",   ng-click='addressSelectionMade("validatedAddress")'    name="opt")
+                            .col-sm-10
+                                p.bold   Select the U.S. Post Office validated address if it looks correct
+                        .row
+                            .col-sm-12  {{student.delivery_line_1}}
+                            .col-sm-12   {{student.last_line}}
+
+                    .col-sm-12.sched-radioseason
+                        hr
+                        .row
+                            .col-sm-2
+                                label( for="opt0")
+                                    input#opt0(type="radio",   ng-click='addressSelectionMade("enteredAddress")'  name="opt")
+                            .col-sm-10
+                                p.bold  Or select the address you entered
+                        .row
+                            .col-sm-12   {{student.address }}  {{student.address2 }}
+                            .col-sm-12    {{student.city  }}, {{student.state  }}   {{student.postal}}
+                        hr
+                .row
+                    .col-sm-offset-4.col-sm-8
+                        button.btn.btn-primary.btn-sm(type='input'  ng-click='closeModal()') Close to edit address

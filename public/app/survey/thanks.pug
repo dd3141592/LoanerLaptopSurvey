@@ -1,0 +1,22 @@
+doctype html
+.container
+    .row
+        .col-md-12.mb-5
+            h4.mb-3 Your technology loan survey has been saved.
+
+    .row.padding-after(ng-show="(survey.enrollSummer == 'no' && survey.enrollFall == 'no') || survey.intendReturn == 'yes' ")
+        .col-sm-6
+            p  Please follow this link now to sign up for a date/time/location to return your device(s).  <a href="https://www.signupgenius.com/index.cfm?go=c.SignUpSearch&eid=00C4CCD7F8CCFD66&cs=09C3BADB8FBE8B627B0764745BB29BC8&sortby=&view=i">Sign Up Genius</a>
+
+    .row.padding-after(ng-show="survey.purchase == 'yes' ")
+        .col-sm-6
+            p  You will receive further information about purchasing your device(s) via your City Colleges email. If you have questions in the meantime, please contact the City Colleges IT Department at cohelpdesk@ccc.edu.
+
+
+
+
+
+
+
+
+
