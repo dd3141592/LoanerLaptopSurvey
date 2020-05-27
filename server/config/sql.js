@@ -21,10 +21,10 @@
        }).then(function () {
            sql.close();
            mailService.sendEmail(surveyData.email);
-           res.sendStatus(200);
+           res.send(true);
        }).catch(function (err) {
            console.log("catch");
-           res.status(400);
+           res.send(err);
            console.log("error saving applicant data: " + err.toString());
            sql.close();
            return;
@@ -33,8 +33,9 @@
        sql.on('error', function (err) {
            console.log("error");
            sql.close();
-           res.status(400);
+           res.send(err);
            console.log("error saving applicant data: " + err.toString());
-           return res.send({reason: err.toString()});
+           //return res.send({reason: err.toString()});
+           return;
        });
    };

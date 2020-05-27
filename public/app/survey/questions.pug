@@ -41,7 +41,7 @@ hr
                 .p-field-error(ng-show='!survey.enrollFall') Please enter your enrollment intentions for fall.
     .col-sm-6
         div(ng-show="survey.enrollFall == 'no'  && survey.enrollSummer == 'no'")
-            p(style="color:blue;") Please click <a target="_blank" href="https://www.signupgenius.com/index.cfm?go=c.SignUpSearch&eid=00C4CCD7F8CCFD66&cs=09C3BADB8FBE8B627B0764745BB29BC8&sortby=&view=i"> here</a> to sign up for a date/time/location to return your device(s).
+            p(style="color:blue;") Please click <a target="_blank" href="https://www.signupgenius.com/index.cfm?go=c.SignUpSearch&eid=00C4CCD7F8CCFD66&cs=09C3BADB8FBE8B627B0764745BB29BC8&sortby=&view=i"><span style="color: black; font-weight:bold;"> here</span></a> to sign up for a date/time/location to return your device(s).
 hr
 .row.padding-after
     .col-sm-6
@@ -70,7 +70,7 @@ hr
                 .p-field-error(ng-show='!survey.purchase') Please enter your a response.
     .col-sm-6
         div(ng-show="survey.purchase == 'no' || survey.purchase == 'noS'")
-            p(style="color: blue;") If you do not wish to purchase your device(s), you must either register for summer and/or fall classes, or click <a target="_blank" href="https://www.signupgenius.com/index.cfm?go=c.SignUpSearch&eid=00C4CCD7F8CCFD66&cs=09C3BADB8FBE8B627B0764745BB29BC8&sortby=&view=i"> here</a> to sign up for a date/time/location to return your device(s).
+            p(style="color: blue;") If you do not wish to purchase your device(s), you must either register for summer and/or fall classes, or click <a target="_blank" href="https://www.signupgenius.com/index.cfm?go=c.SignUpSearch&eid=00C4CCD7F8CCFD66&cs=09C3BADB8FBE8B627B0764745BB29BC8&sortby=&view=i"> <span style="color: black; font-weight:bold;">here</span></a> to sign up for a date/time/location to return your device(s).
 
         div(ng-show="survey.purchase == 'yes'")
             p(style="color: blue;")  You will receive further information about how to purchase your device(s) to your City Colleges email.
