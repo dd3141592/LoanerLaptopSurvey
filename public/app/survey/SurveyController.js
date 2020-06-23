@@ -21,8 +21,7 @@ angular.module('LoanerLaptopSurveyApp').controller('surveyController',
                 return;
             }
             if (
-                $scope.survey.purchase == undefined ||
-                $scope.survey.enrollSummer == undefined ||
+
                 $scope.survey.enrollFall == undefined)
             {
                 return;
